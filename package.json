@@ -1,0 +1,24 @@
+{
+  "name": "react-mixin-sortablejs",
+  "version": "0.1.1",
+  "description": "React mixin for SortableJS.",
+  "main": "react-mixin-sortable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SortableJS/react-mixin-sortablejs.git"
+  },
+  "keywords": [
+    "react",
+    "mixin",
+    "sortable"
+  ],
+  "author": "RubaXa <trash@rubaxa.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SortableJS/react-mixin-sortablejs/issues"
+  },
+  "homepage": "https://github.com/SortableJS/react-mixin-sortablejs#readme"
+}
