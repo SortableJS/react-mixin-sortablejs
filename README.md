@@ -14,7 +14,6 @@ Demo: http://rubaxa.github.io/Sortable/
 Include [react-sortable-mixin.js](react-sortable-mixin.js).
 See [more options](react-sortable-mixin.js#L26).
 
-
 ```jsx
 var SortableList = React.createClass({
 	mixins: [SortableMixin],
@@ -29,14 +28,14 @@ var SortableList = React.createClass({
 
 	render: function() {
 		return <ul>{
-			this.state.items.map(function (text) {
-				return <li>{text}</li>
+			this.state.items.map(function (text, i) {
+				return <li ref={i}>{text}</li>
 			})
 		}</ul>
 	}
 });
 
-React.render(<SortableList />, document.body);
+ReactDOM.render(<SortableList />, document.body);
 
 
 //
@@ -52,17 +51,18 @@ var AllUsers = React.createClass({
 	},
 
 	getInitialState: function() {
-		return { users: ['Abbi', 'Adela', 'Bud', 'Cate', 'Davis', 'Eric']; };
+		return { users: ['Abbi', 'Adela', 'Bud', 'Cate', 'Davis', 'Eric'] };
 	},
 
 	render: function() {
-		return (
-			<h1>Users</h1>
-			<ul ref="user">{
-				this.state.users.map(function (text) {
-					return <li>{text}</li>
-				})
-			}</ul>
+		return (<div>
+				<h1>Users</h1>
+				<ul ref="user">{
+					this.state.users.map(function (text, i) {
+						return <li ref={i}>{text}</li>
+					})
+				}</ul>
+			</div>
 		);
 	}
 });
@@ -72,19 +72,19 @@ var ApprovedUsers = React.createClass({
 	sortableOptions: { group: "shared" },
 
 	getInitialState: function() {
-		return { items: ['Hal', 'Judy']; };
+		return { items: ['Hal', 'Judy'] };
 	},
 
 	render: function() {
 		return <ul>{
-			this.state.items.map(function (text) {
-				return <li>{text}</li>
+			this.state.items.map(function (text, i) {
+				return <li ref={i}>{text}</li>
 			})
 		}</ul>
 	}
 });
 
-React.render(<div>
+ReactDOM.render(<div>
 	<AllUsers/>
 	<hr/>
 	<ApprovedUsers/>
